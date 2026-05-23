@@ -4,7 +4,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use(express.urlencoded({ extends: true }));
+app.use(express.urlencoded({ extended: true }));
 
 const email = "dhivakar123@gmail.com";
 const pass = 7801;
