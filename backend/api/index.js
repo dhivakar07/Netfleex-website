@@ -17,6 +17,6 @@ app.post("/login", function (req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log("Server Started....");
+app.get("/", (req, res) => {
+  res.send("Backend Running 🚀");
 });
