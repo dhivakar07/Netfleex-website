@@ -21,10 +21,13 @@ function Login() {
     } else if (!pass.trim()) {
       setwarning("Password cannot be empty.");
     } else {
-      const logindata = axios.post("http://localhost:3000/login", {
-        email: email,
-        password: pass,
-      });
+      const logindata = axios.post(
+        "https://netfleex-website-gf2b.vercel.app/login",
+        {
+          email: email,
+          password: pass,
+        },
+      );
       logindata.then((data) => {
         if (data.data == true) {
           navigate("/profile");
