@@ -18,7 +18,7 @@ app.post("/login", function (req, res) {
 });
 
 app.get("/", (req, res) => {
-  res.send("Backend Running 🚀");
+  res.send("Backend Server Running...");
 });
 
 module.exports = app;

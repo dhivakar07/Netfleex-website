@@ -188,7 +188,7 @@ html,
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px;
-    z-index: 10;
+    z-index: 100;
     background: transparent;
 }
 
@@ -248,12 +248,17 @@ html,
 
 /* Hero */
 .home_navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
-    background: transparent;
+    z-index: 100;
+    background-color: transparent;
+    transition: all 1s;
+}
+
+.home_navbar.scrolled {
+    background-color: #141414;
 }
 
 .hero_section {
@@ -328,11 +333,372 @@ html,
     border-radius: 5px;
 }
 
-/* International TV Shows */
-.internationalshows_section{
-    margin-left: 50px;
+/* Plays */
+.plays_section {
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
-.internationalshows_section h3{
+
+.plays_section h3 {
     margin: 0;
     color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.plays-wrapper {
+    position: relative;
+}
+
+.plays-lists {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.plays-box {
+    flex: 0 0 auto;
+    width: 230px;
+    height: 130px;
+}
+
+.plays-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* ICON CONTAINER */
+
+.icon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    transition: all 1s;
+}
+
+.plays-wrapper:hover .icon-container {
+    display: flex;
+}
+
+/* ICONS */
+
+.back-icon,
+.front-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 130px;
+    background-color: rgba(20, 20, 20, 0.398);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.back-icon {
+    left: 0;
+}
+
+.front-icon {
+    right: 0;
+}
+
+.back-icon svg,
+.front-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+
+
+
+
+
+/* =========================
+   MEDIA QUERY - 1024px
+========================= */
+
+@media screen and (max-width: 1024px) {
+
+    /* Navbar */
+
+    .navbar_section {
+        padding: 10px 20px;
+    }
+
+    .navbar_section-one {
+        gap: 15px;
+    }
+
+    .navbar_category-list {
+        gap: 10px;
+    }
+
+    .navbar_category-list li {
+        font-size: 12px;
+    }
+
+    .navbar_section-two {
+        gap: 10px;
+    }
+
+    /* Login */
+
+    .input_container {
+        width: 380px;
+    }
+
+    /* Hero */
+
+    .hero_section {
+        height: 500px;
+    }
+
+    .hero_section-heading {
+        width: 400px;
+        left: 30px;
+        bottom: 50px;
+    }
+
+    .hero_section-heading img {
+        width: 240px;
+        height: 160px;
+    }
+
+    .hero_section-heading p {
+        font-size: 15px;
+    }
+
+    .hero_section-btn button,
+    .hero_section-btn p {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    /* Plays */
+
+    .plays_section {
+        margin-left: 20px;
+    }
+
+    .plays-box {
+        width: 200px;
+        height: 115px;
+    }
+
+    .back-icon,
+    .front-icon {
+        height: 115px;
+        width: 40px;
+    }
+
+    .back-icon svg,
+    .front-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Profile */
+
+    .profile_container {
+        gap: 15px;
+    }
+
+    .profile_list-box img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
+/* =========================
+   MEDIA QUERY - 640px
+========================= */
+
+@media screen and (max-width: 640px) {
+
+    /* Navbar */
+
+    .navbar_section {
+        padding: 10px 15px;
+    }
+
+    .navbar_section-one img {
+        width: 80px;
+    }
+
+    .navbar_category-list {
+        display: none;
+    }
+
+    .navbar_section-two svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar_section-two p {
+        display: none;
+    }
+
+    .navbar_profile-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Login */
+
+    .nav_section {
+        padding: 15px 20px;
+    }
+
+    .logo_img img {
+        width: 100px;
+    }
+
+    .login_box {
+        width: 100%;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .login_box h1 {
+        font-size: 28px;
+    }
+
+    .login_box p {
+        font-size: 16px;
+    }
+
+    .input_container {
+        width: 100%;
+    }
+
+    .input_container input {
+        height: 25px;
+    }
+
+    .input_container button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Hero */
+
+    .hero_section {
+        height: 400px;
+    }
+
+    .hero_section img {
+        object-fit: cover;
+    }
+
+    .hero_section-heading {
+        width: 90%;
+        left: 20px;
+        bottom: 30px;
+    }
+
+    .hero_section-heading img {
+        width: 180px;
+        height: 120px;
+    }
+
+    .hero_section-heading p {
+        font-size: 13px;
+    }
+
+    .hero_section-btn {
+        gap: 8px;
+    }
+
+    .hero_section-btn button,
+    .hero_section-btn p {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .play-icon,
+    .i-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+    }
+
+    /* Plays */
+
+    .plays_section {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .plays_section h3 {
+        font-size: 16px;
+    }
+
+    .plays-lists {
+        gap: 5px;
+    }
+
+    .plays-box {
+        width: 160px;
+        height: 95px;
+    }
+
+    .back-icon,
+    .front-icon {
+        width: 30px;
+        height: 95px;
+    }
+
+    .back-icon svg,
+    .front-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Profile */
+
+    .profile_section h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .profile_container {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile_list-box img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile_list-box p {
+        font-size: 14px;
+    }
+
+    /* Failed */
+
+    .failed_error-box {
+        width: 90%;
+    }
+
+    .failed_error-box h1 {
+        font-size: 24px;
+    }
+
+    .failed_error-box p {
+        font-size: 14px;
+    }
 }
