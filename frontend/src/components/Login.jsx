@@ -6,6 +6,7 @@ function Login() {
   const [email, setemail] = useState("");
   const [pass, setpass] = useState("");
   const [warning, setwarning] = useState("");
+  const [loading, setloading] = useState(false);
   const navigate = useNavigate();
   const handleName = (event) => {
     setemail(event.target.value);
@@ -13,7 +14,7 @@ function Login() {
   const handelPassword = (event) => {
     setpass(event.target.value);
   };
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!email.trim() && !pass.trim()) {
       setwarning("Email and password are required.");
     } else if (!email.trim()) {
@@ -21,23 +22,28 @@ function Login() {
     } else if (!pass.trim()) {
       setwarning("Password cannot be empty.");
     } else {
-      const logindata = axios.post(
-        "https://netfleex-website-gf2b.vercel.app/login",
-        {
-          email: email,
-          password: pass,
-        },
-      );
-      logindata.then((data) => {
-        if (data.data == true) {
+      try {
+        setloading(true);
+        const response = await axios.post(
+          "https://netfleex-website-gf2b.vercel.app/login",
+          {
+            email: email,
+            password: pass,
+          },
+        );
+        if (response.data === true) {
           navigate("/profile");
         } else {
           navigate("/failed");
         }
-      });
+      } catch (error) {
+        console.error("Login error:", error);
+        navigate("/failed");
+      } finally {
+        setloading(false);
+      }
     }
   };
-
   return (
     <>
       <section className="nav_section">
@@ -65,7 +71,9 @@ function Login() {
             {warning && (
               <span style={{ color: "red", fontWeight: "400" }}>{warning}</span>
             )}
-            <button onClick={handleClick}>Continue</button>
+            <button onClick={handleClick}>
+              {loading ? "Loading..." : "Continue"}
+            </button>
           </div>
         </div>
       </section>

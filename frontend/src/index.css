@@ -322,6 +322,7 @@ html,
     display: flex;
     align-items: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .hero_section-btn p {
@@ -331,6 +332,7 @@ html,
     padding: 8px 18px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Plays */
@@ -420,15 +422,9 @@ html,
 }
 
 
+/* media 1024px */
 
-
-
-
-/* =========================
-   MEDIA QUERY - 1024px
-========================= */
-
-@media screen and (max-width: 1024px) {
+@media(max-width: 1024px) {
 
     /* Navbar */
 
@@ -521,11 +517,10 @@ html,
 }
 
 
-/* =========================
-   MEDIA QUERY - 640px
-========================= */
 
-@media screen and (max-width: 640px) {
+/* Media 640px */
+
+@media(max-width: 640px) {
 
     /* Navbar */
 
@@ -572,11 +567,11 @@ html,
     }
 
     .login_box h1 {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .login_box p {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .input_container {
@@ -595,7 +590,7 @@ html,
     /* Hero */
 
     .hero_section {
-        height: 400px;
+        height: 300px;
     }
 
     .hero_section img {
@@ -609,12 +604,12 @@ html,
     }
 
     .hero_section-heading img {
-        width: 180px;
-        height: 120px;
+        width: 90px;
+        height: 50px;
     }
 
     .hero_section-heading p {
-        font-size: 13px;
+        font-size: 10px;
     }
 
     .hero_section-btn {
@@ -623,14 +618,14 @@ html,
 
     .hero_section-btn button,
     .hero_section-btn p {
-        font-size: 14px;
-        padding: 6px 12px;
+        font-size: 10px;
+        padding: 4px 8px;
     }
 
     .play-icon,
     .i-icon {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
         margin-right: 5px;
     }
 
@@ -642,7 +637,7 @@ html,
     }
 
     .plays_section h3 {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .plays-lists {
@@ -650,8 +645,8 @@ html,
     }
 
     .plays-box {
-        width: 160px;
-        height: 95px;
+        width: 140px;
+        height: 75px;
     }
 
     .back-icon,
@@ -669,7 +664,7 @@ html,
     /* Profile */
 
     .profile_section h1 {
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -680,12 +675,12 @@ html,
     }
 
     .profile_list-box img {
-        width: 90px;
-        height: 90px;
+        width: 60px;
+        height: 60px;
     }
 
     .profile_list-box p {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     /* Failed */
@@ -695,10 +690,10 @@ html,
     }
 
     .failed_error-box h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .failed_error-box p {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
